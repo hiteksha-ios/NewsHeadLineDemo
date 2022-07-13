@@ -54,11 +54,6 @@ class NewsListVC: UIViewController {
     }
     func getData(isRefresh: Bool = true){
         let resultData = RealmHelper.shared.getAllFlightObjects()
-//        let realm = RealmHelper.shared
-//        for obj in resultData {
-//            realm.deleteObjectFromRealm(object: obj)
-//        }
-//        return
         if resultData.isEmpty == false {
             let arrNewsDetails =   resultData.toArray()
             self.newsFeedListVM = NewsFeedListViewModel(newsDetails: arrNewsDetails)
